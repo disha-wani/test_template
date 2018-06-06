@@ -1,27 +1,42 @@
- {
-    "outputs": {
-      "str1": {
-        "description": "The description of the nat server.",
-        "value": {
-          "get_resource": "random"
-        }
+      {
+      	"heat_template_version": "2013-05-23",
+      	"description": "Simple template disha",
+      	"parameters": {
+      		"image_id": {
+      			"type": "string",
+      			"description": "Image to be used for compute instance",
+      			"label": "Image ID",
+      			"default": "af3d8419-5dd1-4f9f-959d-2ed72236ab73"
+      		},
+      		"net_id": {
+      			"type": "string",
+      			"description": "The network to be used",
+      			"label": "Network UUID",
+      			"default": "b857922b-cff7-42f2-b5ee-02619c0081e5"
+      		},
+      		"instance_type": {
+      			"type": "string",
+      			"description": "Type of instance (flavor) to be used",
+      			"label": "Instance Type",
+      			"default": "s1.medium"
+      		}
+      	},
+      	"resources": {
+      		"my_instance": {
+      			"type": "OS::Nova::Server",
+      			"properties": {
+      				"image": {
+      					"get_param": "image_id"
+      				},
+      				"flavor": {
+      					"get_param": "instance_type"
+      				},
+      				"networks": [{
+      					"network": {
+      						"get_param": "net_id"
+      					}
+      				}]
+      			}
+      		}
+      	}
       }
-    },
-    "heat_template_version": "2013-05-23",
-    "description": "A HOT template that create a single server and boot from volume.",
-    "parameters": {
-      "key_name": {
-        "type": "string",
-    "default": "keysclick",
-        "description": "Name of existing key pair for the instance to be created."
-      }
-    },
-    "resources": {
-      "random": {
-        "type": "OS::Heat::RandomString",
-        "properties": {
-          "length": 6
-        }
-      }
-    }
- }

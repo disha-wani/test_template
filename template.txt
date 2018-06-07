@@ -5,20 +5,17 @@
       		"image_id": {
       			"type": "string",
       			"description": "Image to be used for compute instance",
-      			"label": "Image ID",
-      			"default": "c722f796-990a-42cf-badc-4a3c86563509"
+      			"label": "Image ID"
       		},
       		"net_id": {
       			"type": "string",
       			"description": "The network to be used",
-      			"label": "Network UUID",
-      			"default": "b857922b-cff7-42f2-b5ee-02619c0081e5"
+      			"label": "Network UUID"
       		},
       		"instance_type": {
       			"type": "string",
       			"description": "Type of instance (flavor) to be used",
-      			"label": "Instance Type",
-      			"default": "s1.medium"
+      			"label": "Instance Type"
       		}
       	},
       	"resources": {
@@ -35,8 +32,11 @@
       					"network": {
       						"get_param": "net_id"
       					}
-      				}]
-      			}
+      				}],
+					"user_data": {
+      					"get_file": "myfile"
+      				}
+				}
       		}
       	}
 }

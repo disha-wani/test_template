@@ -17,7 +17,7 @@
                   "user_data": {
       			"type": "string",
       			"description": "user data to use",
-      			"label": "user data for server"
+      			"label": "user_data"
       		},
       		"instance_type": {
       			"type": "string",

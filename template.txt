@@ -14,6 +14,11 @@
       			"label": "Network UUID",
       			"default": "b857922b-cff7-42f2-b5ee-02619c0081e5"
       		},
+                  "user_data": {
+      			"type": "string",
+      			"description": "user data to use",
+      			"label": "user data for server"
+      		},
       		"instance_type": {
       			"type": "string",
       			"description": "Type of instance (flavor) to be used",
@@ -31,6 +36,9 @@
       				"flavor": {
       					"get_param": "instance_type"
       				},
+                              "user_data": {
+                                     "get_file": "myfile"
+                              },
       				"networks": [{
       					"network": {
       						"get_param": "net_id"

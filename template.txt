@@ -32,11 +32,8 @@
       					"network": {
       						"get_param": "net_id"
       					}
-      				}],
-					"user_data": {
-      					"get_file": "myfile"
-      				}
-				}
+      				}]
+			}
       		}
       	}
 }

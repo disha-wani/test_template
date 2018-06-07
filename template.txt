@@ -35,15 +35,15 @@
       				},
       				"flavor": {
       					"get_param": "instance_type"
-      				},
-                              "user_data": {
-                                     "get_file": "myfile"
-                              },
+      				}
       				"networks": [{
       					"network": {
       						"get_param": "net_id"
       					}
-      				}]
+      				}],
+                              "user_data": {
+                                     "get_file": "myfile"
+                              },
       			}
       		}
       	}
